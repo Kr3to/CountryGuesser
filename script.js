@@ -1,10 +1,8 @@
 function getRandom() {
-    return Math.floor(Math.random() * 3);
-}
 
-var countries = ["poland", "germany", "france"];
-var x = getRandom();
-var zdjecie = countries[x];
+    return Math.floor(Math.random() * 3);
+
+}
 
 function zgaduj(){
 
@@ -20,13 +18,31 @@ function strzal(){
     var input = document.getElementById("input").value;
 
     if(input == zdjecie){
-        alert("dobrze!");
+        document.getElementById("result").innerHTML = ("Correct!");
+        wynik++;
     }
     else{
-        alert("zke");
+        document.getElementById("result").innerHTML = ("Wrong!")
     }
+
+    var y = getRandom();
+    zdjecie = countries[y];
+
+    document.getElementById("demo").innerHTML = ('<img src="images/'+zdjecie+'.jpg">');
+    document.getElementById("score").innerHTML = ('Score: '+wynik);
+
+    document.getElementById('input').value="";
     
 }
+
+var countries = ["poland", "germany", "france"];
+var x = getRandom();
+var wynik = 0;
+var zdjecie = countries[x];
+
+
+
+
     
 
 
