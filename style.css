@@ -2,18 +2,51 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     background-color: white;
     width: 100%;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .zgadywanka{
-    margin: auto;
-    width: 50%;
     text-align: center;
+    border: solid gray 1px;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 0.5rem 2rem;
 }
 
 .zgadywanka img{
-    width: 100%;
+    width: 800px;
     height: 500px;
+    border-radius: 2rem;
+    border: solid gray 1px;
+}
+
+.lewo{
+    text-align: center;
+    width: 250px;
+    height: 270px;
+    border: solid gray 1px;
+}
+
+.hint{
+    margin: 0.2rem;
+    display: inline-block;
+    width: 80%;
+    height: 80px;
+    border: solid gray 1px;  
+    border-radius: 1rem;
+}
+
+.hint p{
+    padding-top: 1rem;
+}
+
+.prawo{
+    width: 200px;
+    height: 500px;
+    border: solid gray 1px;
 }
