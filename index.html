@@ -5,55 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <script src="script.js"></script>
 
     <title>CountryGuesser</title>
 
 </head>
 <body onload="zgaduj()">
 
-    <div class="lewo">
+    <div class="guesser">
 
-        <h1>Hints</h1>
+        <div class="hints">
 
-        <div class="hint" onclick="reveal1()">
-            <p id="reveal1">Reveal Capitol!</p>
+            <h2>Hints</h2>
+            <p>Every hint costs 25 points!</p>
+
+            <button class="hint" onclick="reveal1()" id="reveal1">
+                Reveal Capitol!
+            </button>
+
+            <button class="hint" onclick="reveal2()" id="reveal2">
+                Reveal Continent!
+            </button>
 
         </div>
 
-        <div class="hint" onclick="reveal2()">
 
-            <p id="reveal2">Reveal Continent!</p>
+        <div class="zgadywanka">
+
+            <h1>Guess the country</h1>
+
+            <p id="demo"></p>
+
+            <form onsubmit="strzal();return false">
+
+            <input type="text" placeholder="guess..." id="input">
+            <button type="submit" onclick="strzal();return false" id="submit">Check!</button>
+
+            </form>
+
+            <p id="result"></p>
+            <p id="score">Score: 0</p>
 
         </div>
 
     </div>
 
-    <div class="zgadywanka">
-
-    <h1>Guess the country</h1>
-
-    <p id="demo"></p>
-
-    <script src="script.js">
-
-    </script>
-
-    <form onsubmit="strzal();return false">
-
-    <input type="text" placeholder="guess..." id="input">
-    <input type="button" value="Check" onclick="strzal();return false">
-
-    </form>
-
-    <p id="result"></p>
-    <p id="score">Score: 0</p>
-
-    </div>
-
-    <div class="prawo">
-
-        
-    </div>
-    
 </body>
 </html>

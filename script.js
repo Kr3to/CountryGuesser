@@ -17,7 +17,7 @@ function zgaduj(){
 
 function strzal(){
 
-    var input = document.getElementById("input").value;
+    let input = document.getElementById("input").value;
 
     if(input == zdjecie){
         document.getElementById("result").innerHTML = ("Correct!");
@@ -25,12 +25,17 @@ function strzal(){
     }
     else{
         document.getElementById("result").innerHTML = ("Wrong!");
-        wynik=wynik-100;
+        if(wynik < 100){
+            wynik=0;
+        }
+        else{
+            wynik=wynik-100;
+        }
     }
 
     
 
-    var y = getRandom();
+    let y = getRandom();
     zdjecie = countries[y];
     stolica = capitols[y];
     kontynent = continents[y];
@@ -47,27 +52,37 @@ function strzal(){
 
 function reveal1(){
     document.getElementById("reveal1").innerHTML = (stolica);
-    wynik=wynik-25;
+    if(wynik < 25){
+        wynik=0;
+    }
+    else{
+        wynik=wynik-25;
+    }
     document.getElementById("score").innerHTML = ('Score: '+wynik);
 }
 
 function reveal2(){
     document.getElementById("reveal2").innerHTML = (kontynent);
-    wynik=wynik-25;
+    if(wynik < 25){
+        wynik=0;
+    }
+    else{
+        wynik=wynik-25;
+    }
     document.getElementById("score").innerHTML = ('Score: '+wynik);
 }
 
 
-var countries = ["poland", "germany", "france", "brazil", "usa", "china", "kenya", "australia"];
-var capitols = ["warsaw", "berlin", "paris", "brasilia", "washington", "beijing", "nairobi", "canberra"];
-var continents = ["europe", "europe", "europe" , "south america", "north america", "asia", "africa", "australia and oceania"];
+const countries = ["poland", "germany", "france", "brazil", "usa", "china", "kenya", "australia"];
+const capitols = ["warsaw", "berlin", "paris", "brasilia", "washington", "beijing", "nairobi", "canberra"];
+const continents = ["europe", "europe", "europe" , "south america", "north america", "asia", "africa", "australia and oceania"];
 
 
-var x = getRandom();
-var wynik = 0;
-var zdjecie = countries[x];
-var stolica = capitols[x];
-var kontynent = continents[x];
+let x = getRandom();
+let wynik = 0;
+let zdjecie = countries[x];
+let stolica = capitols[x];
+let kontynent = continents[x];
 
 
 
