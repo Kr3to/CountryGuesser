@@ -5,54 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
     <script src="script.js"></script>
-
     <title>CountryGuesser</title>
 
 </head>
-<body onload="zgaduj()">
 
-    <div class="guesser">
+<body>
 
-        <div class="hints">
+    <div class="container">
 
-            <h2>Hints</h2>
-            <p>Every hint costs 25 points!</p>
-
-            <button class="hint" onclick="reveal1()" id="reveal1">
-                Reveal Capitol!
-            </button>
-
-            <button class="hint" onclick="reveal2()" id="reveal2">
-                Reveal Continent!
-            </button>
+        <div class="classic">
 
         </div>
 
+        <div class="survival">
 
-        <div class="zgadywanka">
+        </div>
 
-            <h1>Guess the country</h1>
-
-            <p id="demo"></p>
-
-            <form onsubmit="strzal();return false">
-
-            <input type="text" placeholder="guess..." id="input">
-            <button type="submit" onclick="strzal();return false" id="submit">Check!</button>
-
-            </form>
-
-            <p id="result"></p>
-            <p id="score">Score: 0</p>
+        <div class="speedrun">
 
         </div>
 
     </div>
 
 </body>
+
 </html>
