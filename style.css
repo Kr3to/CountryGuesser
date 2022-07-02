@@ -14,10 +14,12 @@ body{
 }
 
 .container{
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
     justify-content: center;
-    width: 1500px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -42,10 +44,15 @@ body{
 .images{
     width: 100%;
     min-height: 350px;
-    border-radius: 1rem;
+}
+
+.info{
+    font-size: 1.2rem;
+    padding: 1rem;
 }
 
 .start{
+    color: white;
     display: block;
     width: 100%;
     padding: 2rem;
