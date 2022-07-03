@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
     <title>CountryGuesser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Teko:wght@300&display=swap" rel="stylesheet">
 
 </head>
 
@@ -16,7 +19,7 @@
 
         <div class="classic" id="classic">
 
-            <p id="test" onclick="back()">go back</p>
+            <button id="test" onclick="back()">go back</button>
 
             <h1>Classic</h1>
 
@@ -30,7 +33,7 @@
 
         <div class="speedrun" id="speedrun">
 
-            <p id="test1" onclick="back()">go back</p>
+            <button id="test1" onclick="back()">go back</button>
 
             <h1>Speedrun</h1>
 
@@ -44,7 +47,7 @@
 
         <div class="survival" id="survival">
 
-            <p id="test2" onclick="back()">go back</p>
+            <button id="test2" onclick="back()">go back</button>
 
             <h1>Survival</h1>
 
@@ -52,7 +55,9 @@
 
             <p class="info">Here Your accuracy is more important than speed. When you give a wrong answear, You lose. Can You guess all of them correctly in a row?</p>
 
-            <button class="start" onclick="survival()">Start</button>
+            <button id="start" class="start" onclick="survival()">Start</button>
+
+                
 
         </div>
 
