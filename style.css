@@ -81,6 +81,10 @@ img{
     cursor: pointer;
 }
 
+#go{
+    display: none;
+}
+
 .start:hover{
     background-color: #65AFd0;
 }
@@ -94,4 +98,16 @@ img{
     font-weight: bold;
     color: white;
     font-size: 1rem;
+}
+
+#test:hover, #test1:hover, #test2:hover{
+    background-color: #65AFd0;
+}
+
+#score{
+    display: none;
+}
+
+#input{
+    display: none;
 }

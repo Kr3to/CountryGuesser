@@ -50,11 +50,16 @@
 
             <h1>Survival</h1>
 
-            <img src="images/survival.jpg" alt="survival" class="images">
+            <p id="imaga"><img src="images/survival.jpg" alt="survival" class="images" id="imageee"></p>
 
-            <p class="info">Here Your accuracy is more important than speed. When you give a wrong answear, You lose. Can You guess all of them correctly in a row?</p>
+            <p class="info" id="survival__info">Here Your accuracy is more important than speed. When you give a wrong answear, You lose. Can You guess all of them correctly in a row?</p>
 
             <button id="start" class="start" onclick="survival()">Start</button>
+
+            <button id="go" class="start" onclick="survival_go()">Let's go!</button>
+
+            <p id="score" onclick="roll()">Score: 0</p>
+            <input type="text" id="input" placeholder="guess...">
 
         </div>
 
