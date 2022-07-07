@@ -31,6 +31,7 @@ function back() {
     document.getElementById("score").style.display = "none";
     document.getElementById("input").style.display = "none";
     document.getElementById("imaga").innerHTML = ('<img src="images/survival.jpg" class="images">');
+    document.getElementById("submit").style.display = "none";
 }
 
 function survival_go(){
@@ -38,23 +39,46 @@ function survival_go(){
     document.getElementById("go").style.display = "none";
     document.getElementById("score").style.display = "block";
     document.getElementById("input").style.display = "block";
+    document.getElementById("submit").style.display = "block";
+    roll();
 }
 
 function random(){
-    let x = Math.floor(Math.random() * 2);
+    var x = Math.floor(Math.random() * 2);
     return x;
 }
 
 function roll(){
 
-    const countries = ['australia','brazil'];
-    let roll = random();
-    let photo = countries[roll];
+    rollo = random();
+    photo = countries[rollo];
 
-    let x = document.getElementById("imageee").src= photo+".jpg";
-
-    document.getElementById("imaga").innerHTML = ('<img src="images/'+x+'" class="images">');
+    document.getElementById("imaga").innerHTML = ('<img src="images/'+photo+'.jpg" class="images">');
 
 }
+
+function submit(){
+
+    value = document.getElementById("input").value;
+
+    if(value == photo)
+    {
+        score = score + 100;
+        document.getElementById("score").innerHTML = "Score: "+score;
+    }
+    else{
+        score = score - 100;
+        document.getElementById("score").innerHTML = "Score: "+score;
+    }
+
+    roll();
+
+}
+
+const countries = ['australia','brazil'];
+var rollo;
+var photo;
+var score = 0;
+var value;
 
 
