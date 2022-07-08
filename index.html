@@ -52,17 +52,22 @@
 
             <p id="imaga"><img src="images/survival.jpg" alt="survival" class="images" id="imageee"></p>
 
-            <p class="info" id="survival__info">Here Your accuracy is more important than speed. When you give a wrong answear, You lose. Can You guess all of them correctly in a row?</p>
+            <p class="info" id="survival__info">Here Your accuracy is more important than speed. When you give a wrong answear, You lose the streak. Can You guess all of them correctly in a row?</p>
 
             <button id="start" class="start" onclick="survival()">Start</button>
 
             <button id="go" class="start" onclick="survival_go()">Let's go!</button>
 
-            <p id="score">Score: 0</p>
+            <div id="box">
+
+            <p id="score">Streak: 0</p>
+            <p id="result"></p>
 
             <input type="text" id="input" placeholder="guess...">
 
             <button type="submit" id="submit" onclick="submit()">Check!</button>
+
+            </div>
 
         </div>
 

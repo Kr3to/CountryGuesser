@@ -61,7 +61,7 @@ img{
 
 .images{
     width: 100%;
-    min-height: 350px;
+    height: 350px;
 }
 
 .info{
@@ -104,14 +104,7 @@ img{
     background-color: #65AFd0;
 }
 
-#score{
+#box{
     display: none;
-}
-
-#input{
-    display: none;
-}
-
-#submit{
-    display: none;
+    padding: 0 0 0.25rem 0;
 }
