@@ -36,6 +36,7 @@ function back() {
     document.getElementById("box1").style.display = "none";
     document.getElementById("imaga").innerHTML = ('<img src="images/survival.jpg" class="images">');
     document.getElementById("imaga1").innerHTML = ('<img src="images/classic.jpg" class="images">');
+    document.getElementById("imaga1").style.display = "block";
     document.getElementById("result").innerHTML = "";
     score = 0;
     image = 0;
@@ -141,6 +142,7 @@ function submit1(){
     value = document.getElementById("input1").value;
     var answer = value.toLowerCase();
     var current_level = image+2;
+    const guess = document.getElementById('input1');
 
     if(answer == "")
     {
@@ -174,12 +176,13 @@ function submit1(){
         current_level = image+1;
         }
         if(current_level == 9){
-            alert("wygrales");
+            document.getElementById("box1").style.display = "none";
+            document.getElementById("imaga1").style.display = "none";
+            guess.value = "";
         }
         else{
             document.getElementById("level").innerHTML = "Level: "+current_level+"/"+max_level;
-        const guess = document.getElementById('input1');
-        guess.value = "";
+            guess.value = "";
         }
         
     }
