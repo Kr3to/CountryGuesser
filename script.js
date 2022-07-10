@@ -2,6 +2,8 @@ function classic() {
     document.getElementById("survival").style.display = "none";
     document.getElementById("speedrun").style.display = "none";
     document.getElementById("test").style.display = "block";
+    document.getElementById("start1").style.display = "none";
+    document.getElementById("go1").style.display = "block";
 }
 
 function speedrun() {
@@ -26,13 +28,22 @@ function back() {
     document.getElementById("test1").style.display = "none";
     document.getElementById("test2").style.display = "none";
     document.getElementById("start").style.display = "block";
+    document.getElementById("start1").style.display = "block";
     document.getElementById("go").style.display = "none";
     document.getElementById("survival__info").style.display = "block";
+    document.getElementById("classic__info").style.display = "block";
     document.getElementById("box").style.display = "none";
+    document.getElementById("box1").style.display = "none";
     document.getElementById("imaga").innerHTML = ('<img src="images/survival.jpg" class="images">');
+    document.getElementById("imaga1").innerHTML = ('<img src="images/classic.jpg" class="images">');
     document.getElementById("result").innerHTML = "";
     score = 0;
+    image = 0;
+    points = 100;
     document.getElementById("score").innerHTML = "Streak: 0";
+    document.getElementById("result1").innerHTML = "";
+    document.getElementById("score1").innerHTML = "Points: 0";
+    document.getElementById("level").innerHTML = "";
 }
 
 function survival_go(){
@@ -40,6 +51,14 @@ function survival_go(){
     document.getElementById("go").style.display = "none";
     document.getElementById("box").style.display = "block";
     roll();
+}
+
+function classic_go(){
+    document.getElementById("classic__info").style.display = "none";
+    document.getElementById("go1").style.display = "none";
+    document.getElementById("box1").style.display = "block";
+    document.getElementById("imaga1").innerHTML = ('<img src="images/'+countries[0]+'.jpg" class="images">');
+    document.getElementById("level").innerHTML = "Level: 1/"+max_level;
 }
 
 function random(){
@@ -54,6 +73,13 @@ function roll(){
 
     document.getElementById("imaga").innerHTML = ('<img src="images/'+photo+'.jpg" class="images">');
 
+}
+
+function roll1(){
+    rollo = random();
+    photo = countries[rollo];
+
+    document.getElementById("imaga1").innerHTML = ('<img src="images/'+photo+'.jpg" class="images">');
 }
 
 function submit(){
@@ -110,8 +136,60 @@ function submit(){
     }
 }
 
+function submit1(){
+
+    value = document.getElementById("input1").value;
+    var answer = value.toLowerCase();
+    var current_level = image+2;
+
+    if(answer == "")
+    {
+        alert("You have to type something!");
+    }
+    else{
+        if(answer == countries[image])
+        {
+            if(points < 100){
+                points = 100;
+            }
+            else{
+                points = points * 2;
+            }
+        document.getElementById("score1").innerHTML = "Points: "+points;
+        document.getElementById("result1").innerHTML = "Correct!";
+        document.getElementById("result1").style.color = "green";
+        image++;
+        document.getElementById("imaga1").innerHTML = ('<img src="images/'+countries[image]+'.jpg" class="images">');
+        }
+        else{
+            if(points < 100){
+                points = 0;
+            }
+            else{
+                points = points - 100;
+            }
+        document.getElementById("score1").innerHTML = "Points: "+points;
+        document.getElementById("result1").innerHTML = "Wrong!";
+        document.getElementById("result1").style.color = "red";
+        current_level = image+1;
+        }
+        if(current_level == 9){
+            alert("wygrales");
+        }
+        else{
+            document.getElementById("level").innerHTML = "Level: "+current_level+"/"+max_level;
+        const guess = document.getElementById('input1');
+        guess.value = "";
+        }
+        
+    }
+}
+
 const countries = ['australia','brazil','china','france','germany','kenya','poland','usa'];
+var max_level = countries.length;
 var rollo;
 var photo;
 var score = 0;
+var points = 100;
+var image = 0;
 var value;

@@ -42,19 +42,19 @@ img{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.classic{
+.container__classic{
     width: 500px;
     height: 100%;
     border-right: none;
 }
 
-.speedrun{
+.container__speedrun{
     width: 500px;
     height: 100%;
     border-right: none;
 }
 
-.survival{
+.container__survival{
     width: 500px;
     height: 100%;
 }
@@ -81,7 +81,7 @@ img{
     cursor: pointer;
 }
 
-#go{
+#go, #go1{
     display: none;
 }
 
@@ -100,7 +100,7 @@ img{
     font-size: 1rem;
 }
 
-#submit{
+#submit, #submit1{
     border: none;
     background-color: #65AFFF;
     cursor: pointer;
@@ -110,7 +110,7 @@ img{
     font-size: 1rem;
 }
 
-#input{
+#input, #input1{
     padding: 0.5rem;
     margin-right: 0.25rem;
 }
@@ -119,7 +119,7 @@ img{
     background-color: #65AFd0;
 }
 
-#box{
+#box, #box1{
     display: none;
     padding: 0 0 0.25rem 0;
 }

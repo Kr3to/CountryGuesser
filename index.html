@@ -16,21 +16,35 @@
 
     <div class="container">
 
-        <div class="classic" id="classic">
+        <div class="container__classic" id="classic">
 
             <button id="test" onclick="back()">Exit</button>
 
             <h1>Classic</h1>
 
-            <img src="images/classic.jpg" alt="classic" class="images">
+            <p id="imaga1"><img src="images/classic.jpg" alt="classic" class="images"></p>
             
-            <p class="info">You got a bunch of points at the beginning. If You answear right you gain more, if not, then You lose some. How many points can You get?</p>
+            <p class="info" id="classic__info">You got a bunch of points at the beginning. If You answear right you gain more, if not, then You lose some. How many points can You get?</p>
 
-            <button class="start" onclick="classic()">Start</button>
+            <button class="start" id="start1" onclick="classic()">Start</button>
+
+            <button id="go1" class="start" onclick="classic_go()">Let's go!</button>
+
+            <div id="box1">
+
+                <p id="score1">Points: 100</p>
+                <p id="result1"></p>
+                <p id="level"></p>
+
+                <input type="text" id="input1" placeholder="Guess...">
+
+                <button type="submit" id="submit1" onclick="submit1()">Check!</button>
+    
+            </div>
 
         </div>
 
-        <div class="speedrun" id="speedrun">
+        <div class="container__speedrun" id="speedrun">
 
             <button id="test1" onclick="back()">Exit</button>
 
@@ -44,13 +58,13 @@
 
         </div>
 
-        <div class="survival" id="survival">
+        <div class="container__survival" id="survival">
 
             <button id="test2" onclick="back()">Exit</button>
 
             <h1>Survival</h1>
 
-            <p id="imaga"><img src="images/survival.jpg" alt="survival" class="images" id="imageee"></p>
+            <p id="imaga"><img src="images/survival.jpg" alt="survival" class="images"></p>
 
             <p class="info" id="survival__info">Here Your accuracy is more important than speed. When you give a wrong answear, You lose the streak. Can You guess all of them correctly in a row?</p>
 
