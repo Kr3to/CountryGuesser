@@ -30,6 +30,7 @@ function back() {
     document.getElementById("start").style.display = "block";
     document.getElementById("start1").style.display = "block";
     document.getElementById("go").style.display = "none";
+    document.getElementById("go1").style.display = "none";
     document.getElementById("survival__info").style.display = "block";
     document.getElementById("classic__info").style.display = "block";
     document.getElementById("box").style.display = "none";
@@ -41,10 +42,16 @@ function back() {
     score = 0;
     image = 0;
     points = 100;
+    percent = 0;
+    guesses = 0;
+    end = 0;
     document.getElementById("score").innerHTML = "Streak: 0";
     document.getElementById("result1").innerHTML = "";
-    document.getElementById("score1").innerHTML = "Points: 0";
+    document.getElementById("score1").innerHTML = "Points: 100";
     document.getElementById("level").innerHTML = "";
+    var ended = document.getElementById("final");
+    ended.remove();
+    document.getElementById("title").style.display = "block";
 }
 
 function survival_go(){
@@ -153,9 +160,11 @@ function submit1(){
         {
             if(points < 100){
                 points = 100;
+                guesses = guesses + 1;
             }
             else{
                 points = points * 2;
+                guesses = guesses + 1;
             }
         document.getElementById("score1").innerHTML = "Points: "+points;
         document.getElementById("result1").innerHTML = "Correct!";
@@ -166,9 +175,11 @@ function submit1(){
         else{
             if(points < 100){
                 points = 0;
+                guesses = guesses + 1;
             }
             else{
                 points = points - 100;
+                guesses = guesses + 1;
             }
         document.getElementById("score1").innerHTML = "Points: "+points;
         document.getElementById("result1").innerHTML = "Wrong!";
@@ -178,7 +189,16 @@ function submit1(){
         if(current_level == 9){
             document.getElementById("box1").style.display = "none";
             document.getElementById("imaga1").style.display = "none";
+            document.getElementById("title").style.display = "none";
             guess.value = "";
+            var end =  max_level / guesses;
+            var percent = end * 100;
+            var percent_to2 = percent.toFixed(2);
+            var final = document.createElement('p');
+            final.setAttribute("id", "final");
+            final.innerHTML = "Congratulation!<br>You have finished the classic mode!<br><br>Stats:<br>Accuracy: "+percent_to2+"%<br>Points: "+points;
+            const place = document.querySelector('#classic');
+            place.appendChild(final);
         }
         else{
             document.getElementById("level").innerHTML = "Level: "+current_level+"/"+max_level;
@@ -194,5 +214,6 @@ var rollo;
 var photo;
 var score = 0;
 var points = 100;
+var guesses = 0;
 var image = 0;
 var value;
