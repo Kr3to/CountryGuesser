@@ -70,7 +70,7 @@ function classic_go(){
 }
 
 function random(){
-    var x = Math.floor(Math.random() * 8);
+    var x = Math.floor(Math.random() * max_level);
     return x;
 }
 
@@ -150,6 +150,7 @@ function submit1(){
     var answer = value.toLowerCase();
     var current_level = image+2;
     const guess = document.getElementById('input1');
+    var close = max_level + 1;
 
     if(answer == "")
     {
@@ -186,7 +187,7 @@ function submit1(){
         document.getElementById("result1").style.color = "red";
         current_level = image+1;
         }
-        if(current_level == 9){
+        if(current_level == close){
             document.getElementById("box1").style.display = "none";
             document.getElementById("imaga1").style.display = "none";
             document.getElementById("title").style.display = "none";
