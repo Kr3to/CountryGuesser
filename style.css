@@ -43,12 +43,10 @@ img{
 
 .container__classic{
     width: 500px;
-    border-right: none;
 }
 
 .container__speedrun{
     width: 500px;
-    border-right: none;
 }
 
 .container__survival{
@@ -68,7 +66,6 @@ img{
 .start{
     font-weight: bold;
     color: white;
-    display: block;
     width: 100%;
     padding: 2rem;
     font-size: 1.5rem;
@@ -79,10 +76,6 @@ img{
 
 #go, #go1{
     display: none;
-}
-
-.start:hover{
-    background-color: #65AFd0;
 }
 
 #test, #test1, #test2{
@@ -111,7 +104,7 @@ img{
     margin-right: 0.25rem;
 }
 
-#test:hover, #test1:hover, #test2:hover, #submit:hover, #submit1:hover{
+#test:hover, #test1:hover, #test2:hover, #submit:hover, #submit1:hover, .start:hover{
     background-color: #65AFd0;
 }
 

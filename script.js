@@ -67,6 +67,7 @@ function classic_go(){
     document.getElementById("box1").style.display = "block";
     document.getElementById("imaga1").innerHTML = ('<img src="images/'+countries[0]+'.jpg" class="images">');
     document.getElementById("level").innerHTML = "Level: 1/"+max_level;
+    
 }
 
 function random(){
@@ -218,3 +219,32 @@ var points = 100;
 var guesses = 0;
 var image = 0;
 var value;
+
+function events(){
+    const a = document.getElementById("start1");
+    a.addEventListener("click", classic);
+    const b = document.getElementById("start2");
+    b.addEventListener("click", speedrun);
+    const c = document.getElementById("start");
+    c.addEventListener("click", survival);
+    const exit = document.getElementById("test");
+    exit.addEventListener("click", back);
+    const exit1 = document.getElementById("test1");
+    exit1.addEventListener("click", back);
+    const exit2 = document.getElementById("test2");
+    exit2.addEventListener("click", back);
+    const go = document.getElementById("go1");
+    go.addEventListener("click", classic_go);
+    const go1 = document.getElementById("go");
+    go1.addEventListener("click", survival_go);
+    const submitt = document.getElementById("submit1");
+    submitt.addEventListener("click", submit1);
+    const submitt1 = document.getElementById("submit");
+    submitt1.addEventListener("click", submit);
+}
+
+addEventListener('load', events);
+
+
+
+
