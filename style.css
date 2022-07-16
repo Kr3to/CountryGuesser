@@ -74,7 +74,7 @@ img{
     cursor: pointer;
 }
 
-#go, #go1{
+#go, #go1, #go2{
     display: none;
 }
 
@@ -89,7 +89,7 @@ img{
     font-size: 1rem;
 }
 
-#submit, #submit1{
+#submit, #submit1, #submit2{
     border: none;
     background-color: #65AFFF;
     cursor: pointer;
@@ -99,7 +99,7 @@ img{
     font-size: 1rem;
 }
 
-#input, #input1{
+#input, #input1, #input2{
     padding: 0.5rem;
     margin-right: 0.25rem;
 }
@@ -108,7 +108,7 @@ img{
     background-color: #65AFd0;
 }
 
-#box, #box1{
+#box, #box1, #box2{
     display: none;
     padding: 0 0 0.25rem 0;
 }

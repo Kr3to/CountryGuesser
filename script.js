@@ -9,7 +9,9 @@ function classic() {
 function speedrun() {
     document.getElementById("classic").style.display = "none";
     document.getElementById("survival").style.display = "none";
+    document.getElementById("start2").style.display = "none";
     document.getElementById("test1").style.display = "block";
+    document.getElementById("go2").style.display = "block";
 }
 
 function survival() {
@@ -29,14 +31,19 @@ function back() {
     document.getElementById("test2").style.display = "none";
     document.getElementById("start").style.display = "block";
     document.getElementById("start1").style.display = "block";
+    document.getElementById("start2").style.display = "block";
     document.getElementById("go").style.display = "none";
     document.getElementById("go1").style.display = "none";
+    document.getElementById("go2").style.display = "none";
     document.getElementById("survival__info").style.display = "block";
     document.getElementById("classic__info").style.display = "block";
+    document.getElementById("speedrun__info").style.display = "block";
     document.getElementById("box").style.display = "none";
     document.getElementById("box1").style.display = "none";
+    document.getElementById("box2").style.display = "none";
     document.getElementById("imaga").innerHTML = ('<img src="images/survival.jpg" class="images">');
     document.getElementById("imaga1").innerHTML = ('<img src="images/classic.jpg" class="images">');
+    document.getElementById("imaga2").innerHTML = ('<img src="images/time.jpeg" class="images">');
     document.getElementById("imaga1").style.display = "block";
     document.getElementById("result").innerHTML = "";
     score = 0;
@@ -59,6 +66,13 @@ function survival_go(){
     document.getElementById("go").style.display = "none";
     document.getElementById("box").style.display = "block";
     roll();
+}
+
+function speedrun_go(){
+    document.getElementById("speedrun__info").style.display = "none";
+    document.getElementById("go2").style.display = "none";
+    document.getElementById("box2").style.display = "block";
+    roll1();
 }
 
 function classic_go(){
@@ -88,7 +102,7 @@ function roll1(){
     rollo = random();
     photo = countries[rollo];
 
-    document.getElementById("imaga1").innerHTML = ('<img src="images/'+photo+'.jpg" class="images">');
+    document.getElementById("imaga2").innerHTML = ('<img src="images/'+photo+'.jpg" class="images">');
 }
 
 function submit(){
@@ -220,31 +234,27 @@ var guesses = 0;
 var image = 0;
 var value;
 
-function events(){
-    const a = document.getElementById("start1");
-    a.addEventListener("click", classic);
-    const b = document.getElementById("start2");
-    b.addEventListener("click", speedrun);
-    const c = document.getElementById("start");
-    c.addEventListener("click", survival);
-    const exit = document.getElementById("test");
-    exit.addEventListener("click", back);
-    const exit1 = document.getElementById("test1");
-    exit1.addEventListener("click", back);
-    const exit2 = document.getElementById("test2");
-    exit2.addEventListener("click", back);
-    const go = document.getElementById("go1");
-    go.addEventListener("click", classic_go);
-    const go1 = document.getElementById("go");
-    go1.addEventListener("click", survival_go);
-    const submitt = document.getElementById("submit1");
-    submitt.addEventListener("click", submit1);
-    const submitt1 = document.getElementById("submit");
-    submitt1.addEventListener("click", submit);
-}
-
-addEventListener('load', events);
-
-
+const a = document.getElementById("start1");
+a.addEventListener("click", classic);
+const b = document.getElementById("start2");
+b.addEventListener("click", speedrun);
+const c = document.getElementById("start");
+c.addEventListener("click", survival);
+const exit = document.getElementById("test");
+exit.addEventListener("click", back);
+const exit1 = document.getElementById("test1");
+exit1.addEventListener("click", back);
+const exit2 = document.getElementById("test2");
+exit2.addEventListener("click", back);
+const go = document.getElementById("go1");
+go.addEventListener("click", classic_go);
+const go1 = document.getElementById("go");
+go1.addEventListener("click", survival_go);
+const go2 = document.getElementById("go2");
+go2.addEventListener("click", speedrun_go);
+const submitt = document.getElementById("submit1");
+submitt.addEventListener("click", submit1);
+const submitt1 = document.getElementById("submit");
+submitt1.addEventListener("click", submit);
 
 

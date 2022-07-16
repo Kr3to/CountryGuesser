@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>CountryGuesser</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,11 +50,24 @@
 
             <h1>Speedrun</h1>
 
-            <img src="images/time.jpeg" alt="speedrun" class="images">
+            <p id="imaga2"><img src="images/time.jpeg" alt="speedrun" class="images"></p>
 
-            <p class="info">Time is ticking. Choose the amount and check how many right guesses can You get at the end. Or maybe Your time will just run out?</p>
+            <p class="info" id="speedrun__info">Time is ticking. Choose the amount and check how many right guesses can You get at the end. Or maybe Your time will just run out?</p>
 
             <button class="start" id="start2">Start</button>
+
+            <button id="go2" class="start">Let's go!</button>
+
+            <div id="box2">
+
+                <p id="score3">Streak: 0</p>
+                <p id="result3"></p>
+    
+                <input type="text" id="input2" placeholder="Guess...">
+    
+                <button type="submit" id="submit2">Check!</button>
+    
+            </div>
 
         </div>
 
