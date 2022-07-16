@@ -52,8 +52,12 @@ function back() {
     percent = 0;
     guesses = 0;
     end = 0;
+    score1 = 0;
+    seconds = 60;
     document.getElementById("score").innerHTML = "Streak: 0";
+    document.getElementById("score3").innerHTML = "Score: 0";
     document.getElementById("result1").innerHTML = "";
+    document.getElementById("result3").innerHTML = "";
     document.getElementById("score1").innerHTML = "Points: 100";
     document.getElementById("level").innerHTML = "";
     var ended = document.getElementById("final");
@@ -72,7 +76,11 @@ function speedrun_go(){
     document.getElementById("speedrun__info").style.display = "none";
     document.getElementById("go2").style.display = "none";
     document.getElementById("box2").style.display = "block";
+    document.getElementById("time").style.display = "block";
     roll1();
+    document.getElementById("input2").style.display = "inline-block";
+    document.getElementById("submit2").style.display = "inline-block";
+    document.getElementById("result3").style.display = "block";
 }
 
 function classic_go(){
@@ -81,7 +89,6 @@ function classic_go(){
     document.getElementById("box1").style.display = "block";
     document.getElementById("imaga1").innerHTML = ('<img src="images/'+countries[0]+'.jpg" class="images">');
     document.getElementById("level").innerHTML = "Level: 1/"+max_level;
-    
 }
 
 function random(){
@@ -95,7 +102,6 @@ function roll(){
     photo = countries[rollo];
 
     document.getElementById("imaga").innerHTML = ('<img src="images/'+photo+'.jpg" class="images">');
-
 }
 
 function roll1(){
@@ -156,6 +162,34 @@ function submit(){
     }
     else{
         document.getElementById("score").innerHTML = "Streak: "+score+" "+emoji5;
+    }
+}
+
+function submit2(){
+
+    value = document.getElementById("input2").value;
+    var answer = value.toLowerCase();
+
+    if(answer == "")
+    {
+        alert("You have to type something!");
+    }
+    else{
+        if(answer == photo)
+        {
+        score1 = score1 + 1;
+        document.getElementById("score3").innerHTML = "Score: "+score1;
+        document.getElementById("result3").innerHTML = "Correct!";
+        document.getElementById("result3").style.color = "green";
+        }
+        else{
+        document.getElementById("score3").innerHTML = "Score: "+score1;
+        document.getElementById("result3").innerHTML = "Wrong!";
+        document.getElementById("result3").style.color = "red";
+        }
+        roll1();
+        const guess = document.getElementById('input2');
+        guess.value = "";
     }
 }
 
@@ -224,40 +258,44 @@ function submit1(){
     }
 }
 
+function countdown() {
+    if(seconds < 61) { 
+      document.getElementById("time").innerHTML = "Time: "+ seconds;
+    }
+    if (seconds >0 ) { 
+       seconds--;
+    } 
+    else {
+      document.getElementById("time").innerHTML= "Time's up!"; 
+      document.getElementById("input2").style.display = "none";
+      document.getElementById("submit2").style.display = "none";
+      document.getElementById("result3").style.display = "none";
+    }
+  }
+
 const countries = ['australia','brazil','china','france','germany','kenya','poland','usa'];
 var max_level = countries.length;
 var rollo;
 var photo;
 var score = 0;
+var score1 = 0;
 var points = 100;
 var guesses = 0;
 var image = 0;
 var value;
 
-var seconds=10;
+var seconds=60;
 var timer;
-
-function myFunction() {
-  if(seconds < 10) { 
-    document.getElementById("time").innerHTML = seconds;
-  }
-  if (seconds >0 ) { 
-     seconds--;
-  } 
-  else {
-    document.getElementById("time").innerHTML="twoj stary"; 
-  }
-}
 
 document.getElementById("go2").onclick = function() {
   if(!timer) {
     timer = window.setInterval(function() { 
-      myFunction();
+      countdown();
     }, 1000); 
   }
 } 
 
-document.getElementById("time").innerHTML="10"; 
+document.getElementById("time").innerHTML="Time: 60"; 
 
 const a = document.getElementById("start1");
 a.addEventListener("click", classic);
@@ -281,3 +319,5 @@ const submitt = document.getElementById("submit1");
 submitt.addEventListener("click", submit1);
 const submitt1 = document.getElementById("submit");
 submitt1.addEventListener("click", submit);
+const submitt2 = document.getElementById("submit2");
+submitt2.addEventListener("click", submit2);

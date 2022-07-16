@@ -99,6 +99,10 @@ img{
     font-size: 1rem;
 }
 
+#submit3{
+    display: none;
+}
+
 #input, #input1, #input2{
     padding: 0.5rem;
     margin-right: 0.25rem;
@@ -111,6 +115,10 @@ img{
 #box, #box1, #box2{
     display: none;
     padding: 0 0 0.25rem 0;
+}
+
+#time{
+    display: none;
 }
 
 @media all and (max-width: 600px){
