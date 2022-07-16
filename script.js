@@ -234,6 +234,31 @@ var guesses = 0;
 var image = 0;
 var value;
 
+var seconds=10;
+var timer;
+
+function myFunction() {
+  if(seconds < 10) { 
+    document.getElementById("time").innerHTML = seconds;
+  }
+  if (seconds >0 ) { 
+     seconds--;
+  } 
+  else {
+    document.getElementById("time").innerHTML="twoj stary"; 
+  }
+}
+
+document.getElementById("go2").onclick = function() {
+  if(!timer) {
+    timer = window.setInterval(function() { 
+      myFunction();
+    }, 1000); 
+  }
+} 
+
+document.getElementById("time").innerHTML="10"; 
+
 const a = document.getElementById("start1");
 a.addEventListener("click", classic);
 const b = document.getElementById("start2");
@@ -256,5 +281,3 @@ const submitt = document.getElementById("submit1");
 submitt.addEventListener("click", submit1);
 const submitt1 = document.getElementById("submit");
 submitt1.addEventListener("click", submit);
-
-

@@ -104,7 +104,7 @@ img{
     margin-right: 0.25rem;
 }
 
-#test:hover, #test1:hover, #test2:hover, #submit:hover, #submit1:hover, .start:hover{
+#test:hover, #test1:hover, #test2:hover, #submit:hover, #submit1:hover, #submit2:hover, .start:hover{
     background-color: #65AFd0;
 }
 
@@ -116,5 +116,6 @@ img{
 @media all and (max-width: 600px){
     .container__classic, .container__speedrun, .container__survival{
         width: 85vw;
+        height: 85vh;
     }
 }
