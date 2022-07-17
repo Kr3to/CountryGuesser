@@ -60,9 +60,12 @@ function back() {
     document.getElementById("result3").innerHTML = "";
     document.getElementById("score1").innerHTML = "Points: 100";
     document.getElementById("level").innerHTML = "";
-    var ended = document.getElementById("final");
-    ended.remove();
     document.getElementById("title").style.display = "block";
+    var ended = document.getElementById("final");
+    if (typeof(ended) != 'undefined' && ended != null)
+    {
+        ended.remove();
+    }
 }
 
 function survival_go(){
@@ -220,7 +223,13 @@ function submit1(){
         document.getElementById("result1").innerHTML = "Correct!";
         document.getElementById("result1").style.color = "green";
         image++;
-        document.getElementById("imaga1").innerHTML = ('<img src="images/'+countries[image]+'.jpg" class="images">');
+            if(current_level != close)
+            {
+                document.getElementById("imaga1").innerHTML = ('<img src="images/'+countries[image]+'.jpg" class="images">');
+            }
+            else{
+                document.getElementById("imaga1").innerHTML = "";
+            }
         }
         else{
             if(points < 100){
@@ -254,7 +263,6 @@ function submit1(){
             document.getElementById("level").innerHTML = "Level: "+current_level+"/"+max_level;
             guess.value = "";
         }
-        
     }
 }
 

@@ -124,6 +124,20 @@ img{
 @media all and (max-width: 600px){
     .container__classic, .container__speedrun, .container__survival{
         width: 85vw;
-        height: 85vh;
+    }
+    .images{
+        max-width: 100%;
+        height: auto;
+    }
+    .info{
+        font-size: 3.5vw;
+    }
+    .start{
+        font-weight: 300;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+    h1{
+        font-size: 5vw;
     }
 }
